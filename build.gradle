@@ -1,9 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-apply from:"config.gradle"
+apply from: "config.gradle"
 
 buildscript {
     ext.kotlin_version = "1.4.30"
     repositories {
+        maven {
+            url 'http://maven.scm.adc.com:8081/nexus/content/groups/stable-public/'
+
+            credentials {
+                username 'swdp'
+                password 'swdp'
+            }
+        }
         google()
         jcenter()
     }
@@ -18,6 +26,14 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'http://maven.scm.adc.com:8081/nexus/content/groups/stable-public/'
+
+            credentials {
+                username 'swdp'
+                password 'swdp'
+            }
+        }
         google()
         jcenter()
     }

@@ -33,13 +33,8 @@ android {
 }
 
 dependencies {
-    def dependencies = rootProject.ext.libs
-    implementation dependencies.kotlinStdlib
-    implementation dependencies.appcompat
-    implementation dependencies.coreKtx
-    implementation dependencies.material
-    implementation dependencies.constraintlayout
-    testImplementation dependencies.junit
-    androidTestImplementation  dependencies.testJunit
-    androidTestImplementation  dependencies.expressoCore
+    implementation project(path: ':project')
+    implementation project(path: ':favourite')
+    implementation project(path: ':home')
+    implementation project(path: ':baselibrary')
 }

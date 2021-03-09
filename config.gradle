@@ -5,9 +5,9 @@ ext {
     ]
 
     def version = [
-            coreKtx:"1.3.2",
-            appcompat:"1.2.0",
-            material:"1.3.0",
+            "coreKtx":"1.3.2",
+            "appcompat":"1.2.0",
+            "material":"1.3.0",
             constraintlayout:"2.0.4",
             junit:"4.+",
             testJunit: "1.1.2",

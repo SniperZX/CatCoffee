@@ -1,3 +1,6 @@
+include ':favourite'
+include ':project'
+include ':home'
 include ':baselibrary'
 include ':app'
 rootProject.name = "CatCoffee"
