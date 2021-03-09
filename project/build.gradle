@@ -5,7 +5,13 @@ if (isModule.toBoolean()) {
 }
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -61,5 +67,10 @@ android {
 
 dependencies {
 
-
+    kapt libs.arouterCompiler
+    implementation project(path: ':baselibrary')
+    implementation project(path: ':api')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

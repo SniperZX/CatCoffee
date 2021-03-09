@@ -1,7 +1,15 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -32,14 +40,18 @@ android {
 }
 
 dependencies {
-
     def libs  = rootProject.ext.libs
     api libs.kotlinStdlib
     api libs.appcompat
     api libs.coreKtx
     api libs.material
     api libs.constraintlayout
-    testImplementation libs.junit
-    androidTestImplementation  libs.testJunit
-    androidTestImplementation  libs.expressoCore
+    api libs.retrofit
+    api libs.okhttp
+    api libs.arouterApi
+    api libs.livedata
+    api libs.viewModel
+    api libs.fragment
+    api libs.coroutineAndroid
+    kapt libs.arouterCompiler
 }
